@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<meta charset="UTF-8">
+<title>Sistema SENAI</title>
+
+<link rel="stylesheet" th:href="@{/css/style.css}">
+
+</head>
+
+<body>
+
+<div th:replace="fragments/header :: header"></div>
+
+<main class="container">
+
+<h1>Sistema de Estoque SENAI</h1>
+
+<p>Controle de materiais e patrimônio escolar.</p>
+
+<a class="botao" th:href="@{/login}">Acessar o Sistema</a>
+
+</main>
+
+<div th:replace="fragments/footer :: footer"></div>
+
+</body>
+</html>

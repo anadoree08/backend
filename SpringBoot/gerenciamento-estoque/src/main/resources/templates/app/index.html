@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<meta charset="UTF-8">
+<title>Painel do Sistema</title>
+
+<link rel="stylesheet" th:href="@{/css/style.css}">
+
+<style>
+body{
+    font-family: Arial, sans-serif;
+    background-color: #f4f6f9;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+}
+
+.container{
+    background:white;
+    padding:40px;
+    border-radius:10px;
+    box-shadow:0 0 15px rgba(0,0,0,0.1);
+    text-align:center;
+}
+
+h1{
+    color:#333;
+}
+
+.usuario{
+    font-weight:bold;
+    color:#0077cc;
+}
+
+a{
+    display:inline-block;
+    margin-top:20px;
+    padding:10px 20px;
+    background:#0077cc;
+    color:white;
+    text-decoration:none;
+    border-radius:5px;
+}
+
+a:hover{
+    background:#005fa3;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>Área Interna</h1>
+
+<p>Usuário logado:</p>
+
+<p class="usuario" th:text="${email}"></p>
+
+<a th:href="@{/logout}">Sair</a>
+
+</div>
+
+</body>
+</html>

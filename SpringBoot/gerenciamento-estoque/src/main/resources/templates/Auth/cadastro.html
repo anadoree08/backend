@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<meta charset="UTF-8">
+<title>Cadastro</title>
+
+<link rel="stylesheet" th:href="@{/css/style.css}">
+
+<style>
+body{
+    font-family: Arial, sans-serif;
+    background-color:#f4f6f9;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+}
+
+.container{
+    background:white;
+    padding:40px;
+    border-radius:10px;
+    box-shadow:0 0 10px rgba(0,0,0,0.1);
+    width:300px;
+}
+
+h2{
+    text-align:center;
+}
+
+input{
+    width:100%;
+    padding:8px;
+    margin-top:5px;
+    margin-bottom:15px;
+}
+
+button{
+    width:100%;
+    padding:10px;
+    background:#0077cc;
+    color:white;
+    border:none;
+    border-radius:5px;
+}
+
+button:hover{
+    background:#005fa3;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h2>Cadastro</h2>
+
+<form method="post">
+
+<label>Nome</label>
+<input type="text" name="nome" required>
+
+<label>Email</label>
+<input type="email" name="email" required>
+
+<label>Senha</label>
+<input type="password" name="senha" required>
+
+<button type="submit">Cadastrar</button>
+
+</form>
+
+</div>
+
+</body>
+</html>
