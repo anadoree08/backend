@@ -6,50 +6,188 @@
 <title>Login</title>
 <link rel="stylesheet" th:href="@{/css/style.css}">
 <style>
+/* RESET */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+/* BODY */
 body{
-    font-family: Arial, sans-serif;
-    background-color:#f4f6f9;
+    font-family: Arial, Helvetica, sans-serif;
+    background: linear-gradient(135deg, #f4f6f9, #e9edf3);
     display:flex;
-    justify-content:center;
+    flex-direction:column;
     align-items:center;
-    height:100vh;
+    min-height:100vh;
 }
 
+/* HEADER */
+.senai-header{
+    width:100%;
+    background:#ffffff;
+    box-shadow:0 2px 8px rgba(0,0,0,0.08);
+}
+
+.senai-shell{
+    max-width:1200px;
+    margin:0 auto;
+    padding:10px 20px;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+/* BRAND */
+.senai-brand{
+    display:flex;
+    align-items:center;
+    text-decoration:none;
+    color:#333;
+    gap:10px;
+}
+
+.senai-logo{
+    height:40px;
+}
+
+.senai-brand-text{
+    font-weight:bold;
+    font-size:16px;
+}
+
+/* NAV */
+.senai-nav{
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+
+/* BOTÕES */
+.senai-button{
+    padding:8px 16px;
+    border-radius:6px;
+    text-decoration:none;
+    font-weight:500;
+    background:#0077cc;
+    color:white;
+    border:2px solid #0077cc;
+    transition:0.3s;
+}
+
+.senai-button:hover{
+    background:#005fa3;
+    border-color:#005fa3;
+}
+
+/* BOTÃO OUTLINE (Cadastro) */
+.senai-button.outline{
+    background:transparent;
+    color:#0077cc;
+}
+
+.senai-button.outline:hover{
+    background:#0077cc;
+    color:white;
+}
+
+/* BOTÃO HOME */
+.senai-button.home{
+    background:#f1f5f9;
+    color:#333;
+    border:2px solid #d1d5db;
+}
+
+.senai-button.home:hover{
+    background:#0077cc;
+    color:white;
+    border-color:#0077cc;
+}
+
+/* CONTAINER LOGIN */
 .container{
+    margin-top:80px;
     background:white;
-    padding:40px;
-    border-radius:10px;
-    box-shadow:0 0 10px rgba(0,0,0,0.1);
-    width:300px;
+    padding:35px;
+    border-radius:12px;
+    box-shadow:0 10px 25px rgba(0,0,0,0.1);
+    width:100%;
+    max-width:350px;
 }
 
+/* TÍTULO */
 h2{
     text-align:center;
+    margin-bottom:20px;
+    color:#333;
 }
 
+/* LABEL */
+label{
+    font-size:14px;
+    color:#555;
+}
+
+/* INPUTS */
 input{
     width:100%;
-    padding:8px;
+    padding:10px;
     margin-top:5px;
     margin-bottom:15px;
+    border:1px solid #ccc;
+    border-radius:6px;
+    outline:none;
+    transition:0.2s;
 }
 
+input:focus{
+    border-color:#0077cc;
+    box-shadow:0 0 5px rgba(0,119,204,0.3);
+}
+
+/* BOTÃO FORM */
 button{
     width:100%;
-    padding:10px;
+    padding:12px;
     background:#0077cc;
     color:white;
     border:none;
-    border-radius:5px;
+    border-radius:6px;
+    font-weight:bold;
+    cursor:pointer;
+    transition:0.3s;
 }
 
 button:hover{
     background:#005fa3;
+    transform:translateY(-1px);
 }
+</style>
 </style>
 </head>
 
 <body>
+    <header th:fragment="header" class="senai-header">
+	<div class="senai-shell">
+		<a class="senai-brand" th:href="@{/}">
+			<img class="senai-logo" th:src="@{/img/logo senai.png}" alt="SENAI-SP"/>
+			<span class="senai-brand-text">Sistema de Estoque e Patrimônio</span>
+		</a>
+
+		<nav class="senai-nav" aria-label="Navegação principal">
+
+            <a class="senai-button outline" th:href="@{/login}">Login</a>
+            <a class="senai-button " th:href="@{/cadastro}">Cadastro</a>
+            <a class="senai-button " th:href="@{/}">Home</a>
+
+
+</nav>
+		</nav>
+	</div>
+</header>
+
 
 <div class="container">
 
@@ -57,13 +195,10 @@ button:hover{
 
 <form method="post" th:action="@{/login}">
 
-<label>Email</label>
-<input type="email" name="email">
+    <input type="email" name="email">
+    <input type="password" name="senha">
 
-<label>Senha</label>
-<input type="password" name="senha">
-
-<button type="submit">Entrar</button>
+    <button type="submit">Entrar</button>
 
 </form>
 
